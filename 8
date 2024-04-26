@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Згенеруємо випадкові дані
+data = np.random.normal(0, 1, 1000)
+
+# Побудуємо графік розподілу
+plt.figure(figsize=(10, 6))  # Задаємо розміри фігури
+plt.hist(data, bins=30, edgecolor='black', alpha=0.7)  # alpha задає прозорість стовпців
+
+# Додамо лінію для середнього значення
+mean = np.mean(data)
+plt.axvline(mean, color='red', linestyle='dashed', linewidth=1, label=f'Середнє: {mean:.2f}')
+
+# Додамо легенду та сітку
+plt.legend()
+plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+
+# Додамо підписи до графіку
+plt.title('Графік розподілу випадкових чисел')
+plt.xlabel('Значення')
+plt.ylabel('Частота')
+
+# Показати графік
+plt.show()
